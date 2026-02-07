@@ -214,7 +214,7 @@ const projectsData = {
       description: "Microsoft Certified",
       site: "",
       repo: "",
-      article: ""
+      article: "https://medium.com/@eduardolentz/dobradinha-azure-da-semana-como-tirei-a-dp-900-e-sc-900-d0002b6152c2"
     },
         {
       title: "Preparação Azure AZ-104",
