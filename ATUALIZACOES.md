@@ -1,57 +1,68 @@
-﻿# Atualizações
+# Atualizacoes
 
-Este documento registra a evolução do portfólio em ordem cronológica reversa.
+Este documento registra a evolucao do portfolio em ordem cronologica reversa.
 
-## [06-03-2026] - Segurança, filtros e responsividade
+## [06-03-2026] - Idioma, UX e estabilidade visual
 
-- Segurança: adição de `rel="noopener noreferrer"` em links externos com `target="_blank"`.
-- Segurança/manutenção: renderização dos cards de projeto sem `innerHTML` (uso de `createElement` e `textContent`).
+- Seletor de idioma no formato "bolinha" com seta e dropdown discreto.
+- Opcoes de idioma adicionadas: PT, EN e ES.
+- Seletor movido para fora do card (camada global), ficando visivel em Perfil, Tecnologias, Projetos e Badges.
+- Internacionalizacao aplicada em textos estaticos e dinamicos (titulos, botoes, filtros, estado vazio e paginacao).
+- Correcao de encoding em textos que estavam com caracteres quebrados.
+- Badges no mobile ajustados para grid com 3 itens por linha e rolagem vertical.
+- Efeito dos badges ajustado para animar apenas uma vez ao abrir a tela.
+- Refino visual dos botoes de tecnologia com estilo mais minimalista em tons de verde.
+
+## [06-03-2026] - Seguranca, filtros e responsividade
+
+- Seguranca: adicao de `rel="noopener noreferrer"` em links externos com `target="_blank"`.
+- Seguranca/manutencao: renderizacao dos cards de projeto sem `innerHTML` (uso de `createElement` e `textContent`).
 - Filtros: ignoradas tags vazias no filtro de tecnologias.
-- Paginação: ajuste de comportamento ao redimensionar a tela (mobile/desktop).
-- Responsividade: atualização de largura das telas de Projetos e Badges para `min(95vw, ...)`.
-- Estrutura HTML: ajuste de idioma para `pt-BR` e reforço de metadado de charset.
+- Paginacao: ajuste de comportamento ao redimensionar a tela (mobile/desktop).
+- Responsividade: atualizacao de largura das telas de Projetos e Badges para `min(95vw, ...)`.
+- Estrutura HTML: ajuste de idioma para `pt-BR` e reforco de metadado de charset.
 
-## [25-03-2025] - Ícones e animação dos badges
+## [25-03-2025] - Icones e animacao dos badges
 
-- Alteração dos ícones dos botões para ícones do Icons8.
-- Criação do efeito de onda nos badges.
+- Alteracao dos icones dos botoes para icones do Icons8.
+- Criacao do efeito de onda nos badges.
 
-## [16-03-2025] - Botão Credly
+## [16-03-2025] - Botao Credly
 
-- Adição de botão na tela de badges para acesso ao perfil no Credly.
+- Adicao de botao na tela de badges para acesso ao perfil no Credly.
 
-## [22-02-2025] - Atualizações no deploy
+## [22-02-2025] - Atualizacoes no deploy
 
-- Refatoração da Tela 2 (Tecnologias): layout com duas colunas para inclusão de novas tecnologias.
-- Integração com GitHub Actions: configuração de automação para o processo de deploy do site.
+- Refatoracao da Tela 2 (Tecnologias): layout com duas colunas para inclusao de novas tecnologias.
+- Integracao com GitHub Actions: configuracao de automacao para o processo de deploy do site.
 
-## [20-02-2025] - Responsividade e organização
+## [20-02-2025] - Responsividade e organizacao
 
-- Otimização do layout da tela de projetos para melhor adaptação em dispositivos móveis e desktops.
-- Ajuste no grid e na paginação para exibição adequada dos mini cards em diferentes resoluções.
-- Modularização dos dados dos projetos com a criação do arquivo `projectsData.js`.
-- Adição de projetos em Python e Cloud.
+- Otimizacao do layout da tela de projetos para melhor adaptacao em dispositivos moveis e desktops.
+- Ajuste no grid e na paginacao para exibicao adequada dos mini cards em diferentes resolucoes.
+- Modularizacao dos dados dos projetos com a criacao do arquivo `projectsData.js`.
+- Adicao de projetos em Python e Cloud.
 
 ## [19-02-2025] - Tela de badges
 
-- Adição de uma nova tela para badges de certificações.
+- Adicao de uma nova tela para badges de certificacoes.
 
-## [18-02-2025] - Refatoração e melhorias
+## [18-02-2025] - Refatoracao e melhorias
 
-- Refatoração do código: separação em três arquivos (`index.html`, `style.css` e `script.js`).
-- Mudanças de estilo: botões com visual `outline` e ajustes de dimensões para melhor equilíbrio visual.
-- Adição da terceira tela: nova tela de projetos integrada ao layout.
+- Refatoracao do codigo: separacao em tres arquivos (`index.html`, `style.css` e `script.js`).
+- Mudancas de estilo: botoes com visual `outline` e ajustes de dimensoes para melhor equilibrio visual.
+- Adicao da terceira tela: nova tela de projetos integrada ao layout.
 
 ## [13-02-2025] - Layout e efeitos
 
 - Aumento do tamanho da foto de perfil.
-- Ajuste de tipografia para uma combinação mais marcante.
-- Adição de efeito `hover` nos ícones de redes sociais.
-- Ajuste do posicionamento dos botões dentro do cartão.
-- Adição do documento JSON com a permissão para o bucket S3.
+- Ajuste de tipografia para uma combinacao mais marcante.
+- Adicao de efeito `hover` nos icones de redes sociais.
+- Ajuste do posicionamento dos botoes dentro do cartao.
+- Adicao do documento JSON com a permissao para o bucket S3.
 
-## [12-02-2025] - Primeira versão lançada
+## [12-02-2025] - Primeira versao lancada
 
 - Site criado e hospedado na AWS S3.
-- Cartão de visita digital com links para redes sociais.
-- Página de projetos interativa com efeito de virar cartão.
+- Cartao de visita digital com links para redes sociais.
+- Pagina de projetos interativa com efeito de virar cartao.
