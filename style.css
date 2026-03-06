@@ -2,13 +2,13 @@
 h1 {
   font-family: 'Playfair Display', serif;
   font-weight: 800;
-  color: rgb(4, 49, 7);
+  color: rgb(18, 59, 50);
 }
 
 h2 {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  color: rgb(4, 49, 7);
+  color: rgb(18, 59, 50);
 }
 
 p {
@@ -19,33 +19,72 @@ p {
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #3c3e41; 
+  position: relative;
+  overflow: hidden;
+  background-color: #082f2a;
 
   background-image:
-    /* (inferior esquerda) */
+    /* profundidade no canto superior esquerdo */
     radial-gradient(
-      circle at 20% 80%, 
-      rgba(13, 95, 13, 0.582) 0%, 
-      transparent 50%
+      62% 78% at 12% 22%,
+      rgba(4, 46, 40, 0.86) 0%,
+      rgba(4, 46, 40, 0) 72%
     ),
-    /* (centro-direita) */
+    /* glow creme difuso */
     radial-gradient(
-      circle at 70% 50%, 
-      rgba(241, 118, 2, 0.4) 0%, 
-      transparent 80%
+      70% 48% at 18% 42%,
+      rgba(248, 241, 225, 0.9) 0%,
+      rgba(248, 241, 225, 0.58) 26%,
+      rgba(248, 241, 225, 0) 56%
     ),
-    /* (superior direita) */
+    /* mancha oliva suave */
     radial-gradient(
-      circle at 80% 20%, 
-      rgba(21, 179, 171, 0.438) 0%, 
-      transparent 40%
+      48% 58% at 80% 24%,
+      rgba(145, 179, 102, 0.42) 0%,
+      rgba(145, 179, 102, 0) 70%
+    ),
+    /* profundidade no canto inferior direito */
+    radial-gradient(
+      68% 86% at 74% 76%,
+      rgba(3, 56, 49, 0.92) 0%,
+      rgba(3, 56, 49, 0) 72%
+    ),
+    /* preenchimento verde agua */
+    radial-gradient(
+      86% 92% at 30% 86%,
+      rgba(8, 138, 116, 0.58) 0%,
+      rgba(8, 138, 116, 0) 68%
+    ),
+    linear-gradient(
+      180deg,
+      #688f86 0%,
+      #1a6e5f 40%,
+      #0a4037 100%
     );
 
-  background-blend-mode: screen;
+  background-blend-mode: multiply, screen, screen, multiply, screen, normal;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.09) 0.6px, transparent 0.6px);
+  background-size: 3px 3px;
+  mix-blend-mode: soft-light;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+#flipContainer,
+#projectsScreen,
+#badgesScreen {
+  position: relative;
+  z-index: 1;
+}
 /* Container de flip para Telas 1 e 2 */
 .flip-container {
   perspective: 1000px;
@@ -94,6 +133,32 @@ body {
   transform: rotateY(180deg);
 }
 
+.tech-btn {
+  border: 1px solid #7e998a;
+  color: #2f5a49;
+  background: #e8f1eb;
+  font-size: 1.05rem;
+  padding: 0.62rem 1rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 10px rgba(20, 45, 34, 0.12);
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.tech-btn:hover {
+  background: #f2f8f4;
+  color: #204936;
+  border-color: #92b0a0;
+  box-shadow: 0 6px 14px rgba(20, 45, 34, 0.16);
+}
+
+.tech-btn:focus-visible {
+  outline: 2px solid #9ab8a8;
+  outline-offset: 2px;
+}
 /* Tela de Projetos */
 #projectsScreen {
   position: absolute;
@@ -158,36 +223,38 @@ body {
   margin-bottom: 1rem;
 }
 
-/* Animação de Onda para Badges */
-@keyframes wave {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-15px); }
-  100% { transform: translateY(0); }
+/* Animação leve de profundidade para badges */
+@keyframes badgeDepth {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
 }
 
 #badgesScreen.active .badge-wave {
-  animation: wave 1s ease-in-out forwards;
-}
-
-/* Delays Diferentes para cada Badge */
-#badgesScreen.active img:nth-child(1) {
-  animation-delay: 0.2s;
-}
-
-#badgesScreen.active img:nth-child(2) {
-  animation-delay: 0.4s;
-}
-
-#badgesScreen.active img:nth-child(3) {
-  animation-delay: 0.6s;
+  animation: badgeDepth 0.9s ease-in-out 1;
+  transform-origin: center;
 }
 
 /* Hover para Badges */
 #badgesScreen img:hover {
-  transform: scale(1.1);
+  transform: scale(1.06);
   transition: transform 0.3s ease;
 }
 
+
+.badges-row {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  justify-items: center;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+#badgesScreen .badges-row img {
+  width: 5.4rem !important;
+  height: 5.4rem !important;
+  object-fit: contain;
+}
 /* Responsividade */
 @media (max-width: 640px) {
   #projectsScreen,
@@ -196,16 +263,41 @@ body {
     min-height: 580px;
     padding: 1rem;
   }
-  
+
   #badgesScreen,
   #badgesScreen.active {
     width: 95%;
     min-height: 580px;
+    max-height: 86vh;
     padding: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
-  
+
+  #badgesScreen .badges-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+    width: 100%;
+    margin-bottom: 0.25rem;
+  }
+
+  #badgesScreen .badges-row img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 4.9rem;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    justify-self: center;
+  }
+
+  #badgesScreen .mt-auto {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
   h1, h2, p {
     text-align: center;
   }
 }
-
