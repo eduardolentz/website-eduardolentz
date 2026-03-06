@@ -92,9 +92,100 @@ body::before {
   max-width: 400px;
   position: relative;
   margin: auto;
-  /* overflow: hidden; caso seja necessário */
+  /* overflow: hidden; caso seja necessario */
+}
+.lang-switcher {
+  position: fixed;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 150;
 }
 
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  padding: 0.28rem 0.45rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(56, 87, 73, 0.25);
+  backdrop-filter: blur(4px);
+  color: #2f5a49;
+  box-shadow: 0 4px 12px rgba(20, 45, 34, 0.12);
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lang-toggle:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(56, 87, 73, 0.34);
+  box-shadow: 0 6px 14px rgba(20, 45, 34, 0.15);
+}
+
+.lang-toggle:focus-visible {
+  outline: 2px solid rgba(47, 90, 73, 0.4);
+  outline-offset: 2px;
+}
+
+.lang-current-flag {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.lang-caret {
+  width: 0.8rem;
+  height: 0.8rem;
+  transition: transform 0.2s ease;
+}
+
+.lang-switcher.open .lang-caret {
+  transform: rotate(180deg);
+}
+
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  right: 0;
+  display: none;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 4.5rem;
+  padding: 0.3rem;
+  border-radius: 0.7rem;
+  border: 1px solid rgba(56, 87, 73, 0.2);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 8px 20px rgba(20, 45, 34, 0.16);
+}
+
+.lang-switcher.open .lang-menu {
+  display: flex;
+}
+
+.lang-option {
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  background: transparent;
+  color: #2f5a49;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 0.24rem 0.38rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.32rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.lang-option:hover {
+  background: #e8f1eb;
+  border-color: #b4c8bd;
+}
+
+.lang-option[aria-selected="true"] {
+  background: #d8e8df;
+  border-color: #9fbbac;
+}
 .flipper {
   transition: transform 0.6s ease;
   transform-style: preserve-3d;
@@ -223,7 +314,7 @@ body::before {
   margin-bottom: 1rem;
 }
 
-/* Animação leve de profundidade para badges */
+/* Animacao leve de profundidade para badges */
 @keyframes badgeDepth {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.04); }
@@ -300,4 +391,24 @@ body::before {
   h1, h2, p {
     text-align: center;
   }
+
+  .lang-switcher {
+    top: 0.45rem;
+    right: 0.45rem;
+  }
+
+  .lang-toggle {
+    padding: 0.22rem 0.38rem;
+  }
+
+  .lang-current-flag {
+    font-size: 0.84rem;
+  }
+
+  .lang-option {
+    font-size: 0.68rem;
+    padding: 0.22rem 0.34rem;
+  }
 }
+
+

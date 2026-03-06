@@ -5,27 +5,22 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="imagens/icone.png">
-  <title>Eduardo O. Lentz</title>  
-  <!-- Carrega o Tailwind primeiro -->
+  <title>Eduardo O. Lentz</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Link para o arquivo CSS customizado -->
   <link rel="stylesheet" href="style.css" />
-  <!-- Fontes -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body class="flex items-center justify-center min-h-screen p-4 relative">
-  <!-- Container do Flip: Telas 1 (Perfil) e 2 (Tecnologias) -->
   <div id="flipContainer" class="flip-container">
     <div id="card" class="flipper">
-      <!-- Tela 1: Perfil -->
       <div class="front">
         <img src="imagens/foto-perfil.jpg" alt="Foto de perfil" class="w-48 h-48 rounded-full mx-auto" />
         <h1 class="text-3xl font-bold mt-4">Eduardo O. Lentz</h1>
-        <p class="text-gray-600">Cloud Computing | Eng. de Software</p>
+        <p id="profileRole" class="text-gray-600">Cloud Computing | Eng. de Software</p>
         <div class="mt-4">
-          <p id="local">📍 Porto Alegre - RS, Brasil</p>
+          <p id="local">&#x1F4CD; Porto Alegre - RS, Brasil</p>
         </div>
-        <!-- Redes Sociais -->
+
         <div class="flex justify-center gap-4 mt-8">
           <a href="https://wa.me/5551992131010" target="_blank" rel="noopener noreferrer">
             <img src="imagens/whatsapp.png" alt="WhatsApp" class="w-8 hover:scale-110 hover:opacity-80 transition-transform duration-300" />
@@ -39,14 +34,6 @@
           <a href="https://medium.com/@eduardolentz" target="_blank" rel="noopener noreferrer">
             <img src="imagens/medium.png" alt="Medium" class="w-8 hover:scale-110 hover:opacity-80 transition-transform duration-300" />
           </a>
-          <!--
-          <a href="https://dev.to/eduardolentz" target="_blank" rel="noopener noreferrer">
-            <img src="imagens/dev.png" alt="Medium" class="w-8 hover:scale-110 hover:opacity-80 transition-transform duration-300" />
-          </a>
-          <a href="https://gitlab.com/eduardo.lentz" target="_blank" rel="noopener noreferrer">
-            <img src="imagens/gitlab.png" alt="GitLab" class="w-8 hover:scale-110 hover:opacity-80 transition-transform duration-300" />
-          </a>
-        -->
           <a href="https://www.instagram.com/eduardolntz" target="_blank" rel="noopener noreferrer">
             <img src="imagens/instagram.png" alt="Instagram" class="w-8 hover:scale-110 hover:opacity-80 transition-transform duration-300" />
           </a>
@@ -54,135 +41,98 @@
             <img src="imagens/email.png" alt="E-mail" class="w-8 hover:scale-110 hover:opacity-80 transition-transform duration-300" />
           </a>
         </div>
-        <!-- Botões: Badges, Currículo, Projetos -->
+
         <div class="mt-8 flex flex-wrap justify-center gap-4">
-          <button onclick="showBadges()"
-            class="border border-gray-800 text-gray-800 text-sm px-4 py-2 rounded-full shadow-md transition hover:bg-gray-800 hover:text-white">
-            Badges
+          <button onclick="showBadges()" class="border border-gray-800 text-gray-800 text-sm px-4 py-2 rounded-full shadow-md transition hover:bg-gray-800 hover:text-white">
+            <span id="btnBadgesText">Badges</span>
           </button>
-          <a href="EduardoLentz-CV.pdf" target="_blank" rel="noopener noreferrer" download
-            class="border border-blue-700 text-blue-700 text-sm px-4 py-2 rounded-full shadow-md transition hover:bg-blue-700 hover:text-white">
-            Currículo PDF
+          <a href="EduardoLentz-CV.pdf" target="_blank" rel="noopener noreferrer" download class="border border-blue-700 text-blue-700 text-sm px-4 py-2 rounded-full shadow-md transition hover:bg-blue-700 hover:text-white">
+            <span id="btnResumeText">Curr&iacute;culo PDF</span>
           </a>
-          <button onclick="flipCardToTech()"
-            class="border border-green-800 text-green-800 text-sm px-4 py-2 rounded-full shadow-md transition hover:bg-green-800 hover:text-white">
-            Projetos
+          <button onclick="flipCardToTech()" class="border border-green-800 text-green-800 text-sm px-4 py-2 rounded-full shadow-md transition hover:bg-green-800 hover:text-white">
+            <span id="btnProjectsText">Projetos</span>
           </button>
         </div>
       </div>
-      
-      <!-- Tela 2: Tecnologias (lado de trás) -->
+
       <div class="back">
-        <h2 class="text-2xl font-bold">Tecnologia</h2>
+        <h2 id="techScreenTitle" class="text-2xl font-bold">Tecnologia</h2>
         <div class="mt-4 grid grid-cols-2 gap-3">
-          <button onclick="showProjects('Cloud')" class="tech-btn">
-            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7.5 18.5H17a3.5 3.5 0 0 0 .3-7A5 5 0 0 0 7.9 10 3.2 3.2 0 0 0 7.5 18.5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Cloud
-          </button>
-          <button onclick="showProjects('DevOps')" class="tech-btn">
-            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="2.6" stroke="currentColor" stroke-width="1.8"/><path d="M12 4.2V6.1M12 17.9V19.8M4.2 12H6.1M17.9 12H19.8M6.5 6.5L7.8 7.8M16.2 16.2L17.5 17.5M17.5 6.5L16.2 7.8M7.8 16.2L6.5 17.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-            DevOps
-          </button>
-          <button onclick="showProjects('Python')" class="tech-btn">
-            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7h6M9 17h6M8 7a2 2 0 0 0-2 2v2h8V7H8Zm8 6H8v4h8a2 2 0 0 0 2-2v-2Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Python
-          </button>
-          <button onclick="showProjects('JavaScript')" class="tech-btn">
-            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8.5 8.5v7M15.5 8.5v5.3a2.2 2.2 0 0 1-2.2 2.2h-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M6.5 5.5h11v13h-11z" stroke="currentColor" stroke-width="1.8"/></svg>
-            JavaScript
-          </button>
-          <button onclick="showProjects('Dados')" class="tech-btn">
-            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><ellipse cx="12" cy="7" rx="5.5" ry="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M6.5 7v4c0 1.4 2.5 2.5 5.5 2.5s5.5-1.1 5.5-2.5V7M6.5 11v4c0 1.4 2.5 2.5 5.5 2.5s5.5-1.1 5.5-2.5v-4" stroke="currentColor" stroke-width="1.8"/></svg>
-            Dados
-          </button>
-          <button onclick="showProjects('QA')" class="tech-btn">
-            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 9h6v6H9zM12 4.5v2M12 17.5v2M4.5 12h2M17.5 12h2M6.8 6.8l1.4 1.4M15.8 15.8l1.4 1.4M17.2 6.8l-1.4 1.4M8.2 15.8l-1.4 1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-            QA
-          </button>
-          <button onclick="showProjects('CS')" class="tech-btn">
-            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.8 8.6a4.5 4.5 0 1 0 0 6.8M16.8 10.2h4M18.8 8.2v4M16.8 13.8h4M18.8 11.8v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-            C#
-          </button>
-          <button onclick="showProjects('FrontEnd')" class="tech-btn">
-            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4.5" y="5.5" width="15" height="10" rx="1.5" stroke="currentColor" stroke-width="1.8"/><path d="M9 18.5h6M12 15.5v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-            Front-end
-          </button>
-          <button onclick="showProjects('WordPress')" class="tech-btn">
-            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/><path d="M8.8 8.6l2.1 6.9 1.6-4.2 1.7 4.2 1.9-6.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            WordPress
-          </button>
-          <button onclick="showProjects('PHP')" class="tech-btn">
-            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><ellipse cx="12" cy="12" rx="8" ry="5.5" stroke="currentColor" stroke-width="1.8"/><path d="M8.2 12h1.6a1.3 1.3 0 0 0 0-2.6H8.2V14M11.4 14V9.4h2.1a1.3 1.3 0 0 1 0 2.6h-2.1M15.3 14V9.4h2a1.3 1.3 0 0 1 0 2.6h-2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            PHP
-          </button>
-          <button onclick="showProjects('Artigos')" class="tech-btn">
-            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7.5 4.8h7.4l3.1 3.1v10.8a1.3 1.3 0 0 1-1.3 1.3H7.5a1.3 1.3 0 0 1-1.3-1.3V6.1a1.3 1.3 0 0 1 1.3-1.3Z" stroke="currentColor" stroke-width="1.8"/><path d="M14.9 4.8v3.1h3.1M9 12h6M9 15h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-            Artigos
-          </button>
-          <button onclick="showProjects('Outros')" class="tech-btn">
-            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="6.5" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="17.5" cy="12" r="1.6" fill="currentColor"/></svg>
-            Outros
-          </button>
+          <button onclick="showProjects('Cloud')" class="tech-btn"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7.5 18.5H17a3.5 3.5 0 0 0 .3-7A5 5 0 0 0 7.9 10 3.2 3.2 0 0 0 7.5 18.5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-tech-label="Cloud">Cloud</span></button>
+          <button onclick="showProjects('DevOps')" class="tech-btn"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="2.6" stroke="currentColor" stroke-width="1.8"/><path d="M12 4.2V6.1M12 17.9V19.8M4.2 12H6.1M17.9 12H19.8M6.5 6.5L7.8 7.8M16.2 16.2L17.5 17.5M17.5 6.5L16.2 7.8M7.8 16.2L6.5 17.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span data-tech-label="DevOps">DevOps</span></button>
+          <button onclick="showProjects('Python')" class="tech-btn"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7h6M9 17h6M8 7a2 2 0 0 0-2 2v2h8V7H8Zm8 6H8v4h8a2 2 0 0 0 2-2v-2Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-tech-label="Python">Python</span></button>
+          <button onclick="showProjects('JavaScript')" class="tech-btn"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8.5 8.5v7M15.5 8.5v5.3a2.2 2.2 0 0 1-2.2 2.2h-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M6.5 5.5h11v13h-11z" stroke="currentColor" stroke-width="1.8"/></svg><span data-tech-label="JavaScript">JavaScript</span></button>
+          <button onclick="showProjects('Dados')" class="tech-btn"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><ellipse cx="12" cy="7" rx="5.5" ry="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M6.5 7v4c0 1.4 2.5 2.5 5.5 2.5s5.5-1.1 5.5-2.5V7M6.5 11v4c0 1.4 2.5 2.5 5.5 2.5s5.5-1.1 5.5-2.5v-4" stroke="currentColor" stroke-width="1.8"/></svg><span data-tech-label="Dados">Dados</span></button>
+          <button onclick="showProjects('QA')" class="tech-btn"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 9h6v6H9zM12 4.5v2M12 17.5v2M4.5 12h2M17.5 12h2M6.8 6.8l1.4 1.4M15.8 15.8l1.4 1.4M17.2 6.8l-1.4 1.4M8.2 15.8l-1.4 1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span data-tech-label="QA">QA</span></button>
+          <button onclick="showProjects('CS')" class="tech-btn"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.8 8.6a4.5 4.5 0 1 0 0 6.8M16.8 10.2h4M18.8 8.2v4M16.8 13.8h4M18.8 11.8v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span data-tech-label="CS">C#</span></button>
+          <button onclick="showProjects('FrontEnd')" class="tech-btn"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4.5" y="5.5" width="15" height="10" rx="1.5" stroke="currentColor" stroke-width="1.8"/><path d="M9 18.5h6M12 15.5v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span data-tech-label="FrontEnd">Front-end</span></button>
+          <button onclick="showProjects('WordPress')" class="tech-btn"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/><path d="M8.8 8.6l2.1 6.9 1.6-4.2 1.7 4.2 1.9-6.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-tech-label="WordPress">WordPress</span></button>
+          <button onclick="showProjects('PHP')" class="tech-btn"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><ellipse cx="12" cy="12" rx="8" ry="5.5" stroke="currentColor" stroke-width="1.8"/><path d="M8.2 12h1.6a1.3 1.3 0 0 0 0-2.6H8.2V14M11.4 14V9.4h2.1a1.3 1.3 0 0 1 0 2.6h-2.1M15.3 14V9.4h2a1.3 1.3 0 0 1 0 2.6h-2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-tech-label="PHP">PHP</span></button>
+          <button onclick="showProjects('Artigos')" class="tech-btn"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7.5 4.8h7.4l3.1 3.1v10.8a1.3 1.3 0 0 1-1.3 1.3H7.5a1.3 1.3 0 0 1-1.3-1.3V6.1a1.3 1.3 0 0 1 1.3-1.3Z" stroke="currentColor" stroke-width="1.8"/><path d="M14.9 4.8v3.1h3.1M9 12h6M9 15h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span data-tech-label="Artigos">Artigos</span></button>
+          <button onclick="showProjects('Outros')" class="tech-btn"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="6.5" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="17.5" cy="12" r="1.6" fill="currentColor"/></svg><span data-tech-label="Outros">Outros</span></button>
         </div>
-        <!-- Botão para voltar -->
-        <button onclick="flipCardToProfile()"
-          class="mt-auto border border-red-500 text-red-500 px-4 py-2 rounded-full shadow-md transition hover:bg-red-500 hover:text-white flex items-center gap-2">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M10 7L5 12L10 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M19 12H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
-          Voltar
+        <button onclick="flipCardToProfile()" class="mt-auto border border-red-500 text-red-500 px-4 py-2 rounded-full shadow-md transition hover:bg-red-500 hover:text-white flex items-center gap-2">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10 7L5 12L10 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 12H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span id="btnBackTechText">Voltar</span>
         </button>
       </div>
     </div>
   </div>
-  
-  <!-- Tela de Projetos (fora do flip) -->
+
+  <div class="lang-switcher" aria-label="Language selector">
+    <button type="button" id="langToggle" class="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Selecionar idioma">
+      <span id="langCurrentFlag" class="lang-current-flag" aria-hidden="true">&#x1F1E7;&#x1F1F7;</span>
+      <svg class="lang-caret" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <div id="langMenu" class="lang-menu" role="listbox" aria-label="Idiomas">
+      <button type="button" class="lang-option" data-lang="pt" role="option" aria-selected="true">
+        <span aria-hidden="true">&#x1F1E7;&#x1F1F7;</span>
+        <span>PT</span>
+      </button>
+      <button type="button" class="lang-option" data-lang="en" role="option" aria-selected="false">
+        <span aria-hidden="true">&#x1F1FA;&#x1F1F8;</span>
+        <span>EN</span>
+      </button>
+      <button type="button" class="lang-option" data-lang="es" role="option" aria-selected="false">
+        <span aria-hidden="true">&#x1F1EA;&#x1F1F8;</span>
+        <span>ES</span>
+      </button>
+    </div>
+  </div>
+
   <div id="projectsScreen">
     <h2 class="text-2xl font-bold mb-4 text-center">
-      Projetos em <span id="techTitle"></span>
+      <span id="projectsInText">Projetos em</span> <span id="techTitle"></span>
     </h2>
     <div id="filterBar"></div>
-    <!-- Grid para os projetos -->
     <div id="projectsContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full"></div>
     <div class="w-full flex flex-nowrap justify-between items-center mt-auto">
       <div class="flex gap-2 md:gap-4">
-        <button onclick="hideProjects()"
-          class="border border-red-500 text-red-500 px-4 py-2 rounded-full shadow-md transition hover:bg-red-500 hover:text-white flex items-center gap-2">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M10 7L5 12L10 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M19 12H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
-          Voltar
+        <button onclick="hideProjects()" class="border border-red-500 text-red-500 px-4 py-2 rounded-full shadow-md transition hover:bg-red-500 hover:text-white flex items-center gap-2">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10 7L5 12L10 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 12H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span id="btnBackProjectsText">Voltar</span>
         </button>
-        <button onclick="goHome()"
-          class="border border-green-800 text-green-800 px-4 py-2 rounded-full shadow-md transition hover:bg-green-800 hover:text-white flex items-center gap-2">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.8"/>
-            <path d="M5.5 19C6.6 15.9 8.8 14.5 12 14.5C15.2 14.5 17.4 15.9 18.5 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
-          Perfil
+        <button onclick="goHome()" class="border border-green-800 text-green-800 px-4 py-2 rounded-full shadow-md transition hover:bg-green-800 hover:text-white flex items-center gap-2">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.8"/><path d="M5.5 19C6.6 15.9 8.8 14.5 12 14.5C15.2 14.5 17.4 15.9 18.5 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span id="btnProfileText">Perfil</span>
         </button>
       </div>
       <div id="paginationControls" class="flex gap-2 items-center">
         <button id="prevPage" onclick="prevPage()" class="border border-gray-500 text-gray-500 px-2 py-1 rounded-full shadow-md transition hover:bg-gray-500 hover:text-white">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <span id="pageIndicator" class="text-gray-600"></span>
         <button id="nextPage" onclick="nextPage()" class="border border-gray-500 text-gray-500 px-2 py-1 rounded-full shadow-md transition hover:bg-gray-500 hover:text-white">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </div>
     </div>
   </div>
-  
-  <!-- Tela de Badges (fora do flip) -->
+
   <div id="badgesScreen">
-    <h2 class="text-2xl font-bold text-center mb-4">Badges</h2>
+    <h2 id="badgesTitle" class="text-2xl font-bold text-center mb-4">Badges</h2>
     <div class="badges-row">
       <img src="imagens/badges/aws2.png" alt="AWS Certified Solutions Architect Associate" class="badge-wave w-28 h-28 object-contain" />
       <img src="imagens/badges/aws1.png" alt="AWS Certified Cloud Practitioner" class="badge-wave w-28 h-28 object-contain" />
@@ -195,28 +145,23 @@
       <img src="imagens/badges/sc900.png" alt="Microsoft Certified: Microsoft Security, Compliance, and Identity Fundamentals" class="badge-wave w-28 h-28 object-contain" />
     </div>
     <div class="mt-auto flex gap-4">
-      <a href="https://www.credly.com/users/eduardolentz" target="_blank" rel="noopener noreferrer"
-         class="border border-orange-600 text-orange-600 px-4 py-2 rounded-full shadow-md transition hover:bg-orange-600 hover:text-white flex items-center gap-2">
-         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M12 3L14.4 5.1L17.5 4.9L18.2 7.9L20.8 9.6L19.3 12.3L19.8 15.4L16.8 16L14.8 18.4L12 17.1L9.2 18.4L7.2 16L4.2 15.4L4.7 12.3L3.2 9.6L5.8 7.9L6.5 4.9L9.6 5.1L12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-          <path d="M9.5 12.1L11.3 13.9L14.8 10.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-         </svg>
-         Credly
+      <a href="https://www.credly.com/users/eduardolentz" target="_blank" rel="noopener noreferrer" class="border border-orange-600 text-orange-600 px-4 py-2 rounded-full shadow-md transition hover:bg-orange-600 hover:text-white flex items-center gap-2">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3L14.4 5.1L17.5 4.9L18.2 7.9L20.8 9.6L19.3 12.3L19.8 15.4L16.8 16L14.8 18.4L12 17.1L9.2 18.4L7.2 16L4.2 15.4L4.7 12.3L3.2 9.6L5.8 7.9L6.5 4.9L9.6 5.1L12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9.5 12.1L11.3 13.9L14.8 10.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span id="btnCredlyText">Credly</span>
       </a>
-      <button onclick="voltarDosBadges()"
-        class="border border-red-500 text-red-500 px-4 py-2 rounded-full shadow-md transition hover:bg-red-500 hover:text-white flex items-center gap-2">
-        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M10 7L5 12L10 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M19 12H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        </svg>
-        Voltar
+      <button onclick="voltarDosBadges()" class="border border-red-500 text-red-500 px-4 py-2 rounded-full shadow-md transition hover:bg-red-500 hover:text-white flex items-center gap-2">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10 7L5 12L10 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 12H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span id="btnBackBadgesText">Voltar</span>
       </button>
     </div>
   </div>
-  
-  <!-- Scripts -->
+
   <script src="projectsData.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
 
