@@ -105,7 +105,7 @@ body {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   z-index: 50;
-  width: 600px;
+  width: min(95vw, 600px);
   min-height: 520px;
   opacity: 0;
   pointer-events: none;
@@ -116,7 +116,7 @@ body {
 
 #projectsScreen.active {
   opacity: 1;
-  width: 650px;
+  width: min(95vw, 650px);
   min-height: 570px;
   pointer-events: auto;
 }
@@ -132,7 +132,7 @@ body {
   box-shadow: 0 10px 15px rgba(0,0,0,0.1);
   padding: 1rem;
   z-index: 100;
-  width: 600px;
+  width: min(95vw, 600px);
   min-height: 520px;
   opacity: 0;
   pointer-events: none;
@@ -144,7 +144,7 @@ body {
 
 #badgesScreen.active {
   opacity: 1;
-  width: 650px;
+  width: min(95vw, 650px);
   min-height: 570px;
   pointer-events: auto;
 }
@@ -208,3 +208,4 @@ body {
     text-align: center;
   }
 }
+
