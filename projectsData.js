@@ -100,21 +100,31 @@ const projectsData = {
   ],
   QA: [
     {
-    title: "BugBank — Casos de Teste",
-    tags: ["QA", "Testes Manuais"],
-    description: "Plano de testes manual para o formulário de cadastro do BugBank: 10 CTs, rastreabilidade de requisitos e bug documentado via análise de código-fonte.",
-    site: "",
-    repo: "https://github.com/eduardolentz/qa-bugbank-casos-de-teste",
-    article: "",
-    doc: "https://github.com/eduardolentz/qa-bugbank-casos-de-teste/raw/main/docs/casos_de_teste_bugbank.docx"
-  },
-    {
-      title: "Testes Automatizados",
-      tags: [""],
-      description: "Em construção",
+      title: "BugBank — Parte 1: Casos de Teste",
+      tags: ["Testes Manuais"],
+      description: "Plano de testes manual com 10 CTs e rastreabilidade de requisitos.",
       site: "",
-      repo: "",
-      article: ""
+      repo: "https://github.com/eduardolentz/qa-bugbank-casos-de-teste",
+      article: "",
+      doc: "https://github.com/eduardolentz/qa-bugbank-casos-de-teste/raw/main/docs/casos_de_teste_bugbank.docx"
+    },
+    {
+      title: "BugBank — Parte 2: Testes Automatizados",
+      tags: ["Playwright", "Python", "Automação"],
+      description: "10 casos de teste automatizados com Playwright + Python e relatório automático de execução.",
+      site: "",
+      repo: "https://github.com/eduardolentz/qa-bugbank-automacao",
+      article: "",
+      doc: "https://github.com/eduardolentz/qa-bugbank-automacao/blob/main/docs/COMO_FUNCIONA.md"
+    },
+    {
+      title: "BugBank — Parte 3: Bug Report & Fix",
+      tags: ["Bug Report", "Pull Request"],
+      description: "Ciclo completo de bug: identificado, automatizado, reportado.",
+      site: "",
+      repo: "https://github.com/eduardolentz/qa-bugbank-automacao",
+      article: "",
+      doc: "https://github.com/eduardolentz/qa-bugbank-automacao/blob/main/docs/FLUXO_BUG.md"
     },
   ],
   CS: [
