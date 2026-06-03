@@ -100,6 +100,15 @@ const projectsData = {
   ],
   QA: [
     {
+    title: "BugBank — Casos de Teste",
+    tags: ["QA", "Testes Manuais"],
+    description: "Plano de testes manual para o formulário de cadastro do BugBank: 10 CTs, rastreabilidade de requisitos e bug documentado via análise de código-fonte.",
+    site: "",
+    repo: "https://github.com/eduardolentz/qa-bugbank-casos-de-teste",
+    article: "",
+    doc: "https://github.com/eduardolentz/qa-bugbank-casos-de-teste/raw/main/docs/casos_de_teste_bugbank.docx"
+  },
+    {
       title: "Testes Automatizados",
       tags: [""],
       description: "Em construção",
