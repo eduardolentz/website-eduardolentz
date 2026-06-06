@@ -105,7 +105,7 @@ const projectsData = {
       description: "Plano de testes manual com 10 CTs e rastreabilidade de requisitos.",
       site: "",
       repo: "https://github.com/eduardolentz/qa-bugbank-casos-de-teste",
-      article: "",
+      article: "https://medium.com/@eduardolentz/explorando-o-ciclo-completo-de-qa-0cd534471671",
       doc: "https://github.com/eduardolentz/qa-bugbank-casos-de-teste/raw/main/docs/casos_de_teste_bugbank.docx"
     },
     {
@@ -126,6 +126,14 @@ const projectsData = {
       article: "",
       doc: "https://github.com/eduardolentz/qa-bugbank-automacao/blob/main/docs/FLUXO_BUG.md"
     },
+    {
+      title: "Projeto API Node.js",
+      tags: ["Automação"],
+      description: "API em Node com PostgreSQL e teste",
+      site: "",
+      repo: "https://github.com/eduardolentz/API-node-biblioteca",
+      article: "https://medium.com/@eduardolentz/construindo-tr%C3%AAs-apis-em-um-final-de-semana-net-python-e-node-js-22a473e4f8df"
+    }
   ],
   CS: [
     {
