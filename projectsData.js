@@ -119,7 +119,7 @@ const projectsData = {
     },
     {
       title: "BugBank — Parte 3: Bug Report & Fix",
-      tags: ["Bug Report", "Pull Request"],
+      tags: ["Bug Report"],
       description: "Ciclo completo de bug: identificado, automatizado, reportado.",
       site: "",
       repo: "https://github.com/eduardolentz/qa-bugbank-automacao",
