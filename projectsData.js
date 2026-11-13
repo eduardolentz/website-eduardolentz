@@ -77,6 +77,14 @@ const projectsData = {
       repo: "https://github.com/eduardolentz/API-python-biblioteca",
       article: "https://medium.com/@eduardolentz/construindo-tr%C3%AAs-apis-em-um-final-de-semana-net-python-e-node-js-22a473e4f8df"
     },
+    {
+      title: "SQL List Formatter ",
+      tags: ["Python", "Automation"],
+      description: "Automatiza a formatação de listas para consultas SQL.",
+      site: "",
+      repo: "https://github.com/eduardolentz/sql-list-formatter",
+  article: "https://medium.com/@eduardolentz/nem-todo-projeto-precisa-ser-grande-%C3%A0s-vezes-basta-resolver-um-pequeno-problema-39d53b33d22b"
+},
   ],
   JavaScript: [
     {
@@ -179,6 +187,13 @@ const projectsData = {
     },
   ],
   Artigos: [
+    {
+      title: "Nem todo projeto precisa ser grande",
+      tags: ["Tecnologia", "Python", "Automação"],
+      description: "Uma reflexão sobre transformar pequenos problemas em soluções.",
+      repo: "https://github.com/eduardolentz/sql-list-formatter",
+      url: "https://medium.com/@eduardolentz/nem-todo-projeto-precisa-ser-grande-%C3%A0s-vezes-basta-resolver-um-pequeno-problema-39d53b33d22b"
+    },
     {
       title: "Preparação AWS Cloud Practitioner",
       tags: ["Certificações","Cloud","AWS"],
